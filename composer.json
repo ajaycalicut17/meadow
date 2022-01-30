@@ -1,0 +1,15 @@
+{
+    "name": "ajaycalicut17/larastarter",
+    "description": "Laravel starter",
+    "type": "laravel-package",
+    "require": {
+        "laravel/laravel": "^8.6",
+        "laravel/fortify": "^1.10"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Ajaycalicut17\\Larastarter\\": "src/"
+        }
+    }
+}
