@@ -1,15 +1,28 @@
 {
     "name": "ajaycalicut17/larastarter",
     "description": "Laravel starter",
-    "type": "laravel-package",
+    "type": "library",
+    "keywords": [
+        "ajaycalicut17",
+        "laravel",
+        "larastarter"
+    ],
+    "homepage": "https://github.com/ajaycalicut17/larastarter",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "ajaycalicut17",
+            "role": "Developer"
+        }
+    ],
     "require": {
-        "laravel/laravel": "^8.6",
         "laravel/fortify": "^1.10"
     },
-    "license": "MIT",
     "autoload": {
         "psr-4": {
             "Ajaycalicut17\\Larastarter\\": "src/"
         }
-    }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
 }
