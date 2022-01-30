@@ -3,6 +3,7 @@
 namespace Ajaycalicut17\Larastarter\Console\Commands;
 
 use Illuminate\Console\Command;
+use Illuminate\Support\Str;
 
 class InstallCommand extends Command
 {
@@ -37,6 +38,21 @@ class InstallCommand extends Command
      */
     public function handle()
     {
-        return 0;
+        // Publish
+        $this->callSilent('vendor:publish', ['--provider' => 'Laravel\Fortify\FortifyServiceProvider', '--force' => true]);
+
+        // Fortify Provider
+        $this->installServiceProviderAfter('RouteServiceProvider', 'FortifyServiceProvider');
+    }
+
+    protected function installServiceProviderAfter($after, $name)
+    {
+        if (!Str::contains($appConfig = file_get_contents(config_path('app.php')), 'App\\Providers\\' . $name . '::class')) {
+            file_put_contents(config_path('app.php'), str_replace(
+                'App\\Providers\\' . $after . '::class,',
+                'App\\Providers\\' . $after . '::class,' . PHP_EOL . '        App\\Providers\\' . $name . '::class,',
+                $appConfig
+            ));
+        }
     }
 }
