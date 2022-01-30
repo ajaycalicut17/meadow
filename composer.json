@@ -23,6 +23,13 @@
             "Ajaycalicut17\\Larastarter\\": "src/"
         }
     },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Ajaycalicut17\\Larastarter\\LarastarterServiceProvider"
+            ]
+        }
+    },
     "minimum-stability": "dev",
     "prefer-stable": true
 }
