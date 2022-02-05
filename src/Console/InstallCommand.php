@@ -3,6 +3,7 @@
 namespace Ajaycalicut17\Larastarter\Console;
 
 use Illuminate\Console\Command;
+use Illuminate\Filesystem\Filesystem;
 
 class InstallCommand extends Command
 {
@@ -53,6 +54,11 @@ class InstallCommand extends Command
         PHP_EOL . "        Fortify::verifyEmailView(function () {" . PHP_EOL . "            return view('admin.auth.verify-email');" . PHP_EOL . "        });" . 
         PHP_EOL . "        Fortify::confirmPasswordView(function () {" . PHP_EOL . "            return view('admin.auth.confirm-password');" . PHP_EOL . "        });";
         $this->replaceInFile($search, $replace, app_path('Providers/FortifyServiceProvider.php'));
+
+        (new Filesystem)->ensureDirectoryExists(base_path('resources/views/admin'));
+        (new Filesystem)->copyDirectory(__DIR__ . '/../../resources/views/admin', base_path('resources/views/admin'));
+        (new Filesystem)->ensureDirectoryExists(base_path('resources/views/layouts'));
+        (new Filesystem)->copyDirectory(__DIR__ . '/../../resources/views/layouts', base_path('resources/views/layouts'));
     }
     
     protected function replaceInFile(string $search = '', string $replace = '', string $path = ''): bool
