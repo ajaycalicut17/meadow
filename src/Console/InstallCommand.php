@@ -64,8 +64,8 @@ class InstallCommand extends Command
         (new Filesystem)->copyDirectory(__DIR__ . '/../../stubs/resources/js', base_path('resources/js'));
         (new Filesystem)->ensureDirectoryExists(base_path('resources/views/admin'));
         (new Filesystem)->copyDirectory(__DIR__ . '/../../stubs/resources/views/admin', base_path('resources/views/admin'));
-        (new Filesystem)->ensureDirectoryExists(base_path('resources/views/layouts'));
-        (new Filesystem)->copyDirectory(__DIR__ . '/../../stubs/resources/views/layouts', base_path('resources/views/layouts'));
+        (new Filesystem)->ensureDirectoryExists(base_path('resources/views/components'));
+        (new Filesystem)->copyDirectory(__DIR__ . '/../../stubs/resources/views/components', base_path('resources/views/components'));
 
         // npm packages
         $this->updateNodePackages(function ($packages) {
