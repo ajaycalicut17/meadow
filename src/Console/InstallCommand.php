@@ -60,6 +60,8 @@ class InstallCommand extends Command
         (new Filesystem)->copyDirectory(__DIR__ . '/../../stubs/resources/css', base_path('resources/css'));
         (new Filesystem)->ensureDirectoryExists(base_path('resources/img'));
         (new Filesystem)->copyDirectory(__DIR__ . '/../../stubs/resources/img', base_path('resources/img'));
+        (new Filesystem)->ensureDirectoryExists(base_path('resources/js'));
+        (new Filesystem)->copyDirectory(__DIR__ . '/../../stubs/resources/js', base_path('resources/js'));
         (new Filesystem)->ensureDirectoryExists(base_path('resources/views/admin'));
         (new Filesystem)->copyDirectory(__DIR__ . '/../../stubs/resources/views/admin', base_path('resources/views/admin'));
         (new Filesystem)->ensureDirectoryExists(base_path('resources/views/layouts'));
@@ -74,6 +76,7 @@ class InstallCommand extends Command
                 'postcss' => '^8.4.6',
                 'autoprefixer' => '^10.4.2',
                 'color' => '^4.2.1',
+                'alpinejs' => '^3.9.0',
             ] + $packages;
         });
 
