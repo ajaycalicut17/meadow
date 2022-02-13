@@ -58,6 +58,8 @@ class InstallCommand extends Command
         // resources files
         (new Filesystem)->ensureDirectoryExists(base_path('resources/css'));
         (new Filesystem)->copyDirectory(__DIR__ . '/../../stubs/resources/css', base_path('resources/css'));
+        (new Filesystem)->ensureDirectoryExists(base_path('resources/img'));
+        (new Filesystem)->copyDirectory(__DIR__ . '/../../stubs/resources/img', base_path('resources/img'));
         (new Filesystem)->ensureDirectoryExists(base_path('resources/views/admin'));
         (new Filesystem)->copyDirectory(__DIR__ . '/../../stubs/resources/views/admin', base_path('resources/views/admin'));
         (new Filesystem)->ensureDirectoryExists(base_path('resources/views/layouts'));
