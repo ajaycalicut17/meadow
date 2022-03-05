@@ -70,12 +70,10 @@ class InstallCommand extends Command
         // npm packages
         $this->updateNodePackages(function ($packages) {
             return [
-                'tailwindcss' => '^1.9.6',
-                'tailwindcss-multi-theme' => '^1.0.4',
-                '@tailwindcss/custom-forms' => '^0.2.1',
-                'postcss' => '^8.4.6',
+                'tailwindcss' => '^3.0.23',
+                '@tailwindcss/forms' => '^0.5.0',
+                'postcss' => '^8.4.7',
                 'autoprefixer' => '^10.4.2',
-                'color' => '^4.2.1',
                 'alpinejs' => '^3.9.0',
             ] + $packages;
         });
