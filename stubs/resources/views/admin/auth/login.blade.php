@@ -9,12 +9,12 @@
         {{ __('Login') }}
       </h1>
       <div class="block text-sm">
-        <x-forms.label name="{{ __('Email') }}" for="email"/>
-        <x-inputs.text name="email" placeholder="{{ __('Email') }}"/>
+        <x-forms.label name="{{ __('Email') }}" for="input-email"/>
+        <x-inputs.text name="email" id="input-email" placeholder="{{ __('Email') }}"/>
       </div>
       <div class="block mt-4 text-sm">
-        <x-forms.label name="{{ __('Password') }}" for="password"/>
-        <x-inputs.password name="password" placeholder="***************"/>
+        <x-forms.label name="{{ __('Password') }}" for="input-password"/>
+        <x-inputs.password name="password" id="input-password" placeholder="***************"/>
       </div>
       
       <a class="block w-full px-4 py-2 mt-4 text-sm font-medium leading-5 text-center text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple" href="../index.html">
