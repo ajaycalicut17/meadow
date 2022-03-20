@@ -29,7 +29,9 @@ php artisan migrate
 
 ## Demo
 
-[![Test on PHPSandbox](https://phpsandbox.io/img/brand/badge.png)](https://phpsandbox.io/n/wpklk)
+<a href="https://phpsandbox.io/n/wpklk">
+    <img src="https://phpsandbox.io/img/brand/badge.png" height="50" alt="PHPSandbox Notebook">
+</a>
 
 ## Acknowledgements
 
