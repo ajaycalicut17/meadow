@@ -81,6 +81,12 @@ class InstallCommand extends Command
         // tailwind configuration
         copy(__DIR__ . '/../../stubs/tailwind.config.js', base_path('tailwind.config.js'));
         copy(__DIR__.'/../../stubs/webpack.mix.js', base_path('webpack.mix.js'));
+
+        $search = "public function run()" . PHP_EOL . "    {";
+        $replace = '        $this->call([' . PHP_EOL . '            UserSeeder::class' . PHP_EOL . '        ]);' . PHP_EOL;
+        $this->replaceInFile($search, $replace, base_path('database/seeders/DatabaseSeeder.php'));
+
+        copy(__DIR__ . '/../../stubs/database/seeders/UserSeeder.php', base_path('database/seeders/UserSeeder.php'));
     }
 
     protected function replaceInFile(string $search = '', string $replace = '', string $path = ''): void
