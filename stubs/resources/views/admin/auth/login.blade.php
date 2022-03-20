@@ -1,9 +1,7 @@
 <x-layouts.guest>
     <div class="h-32 md:h-auto md:w-1/2">
-        <img aria-hidden="true" class="object-cover w-full h-full dark:hidden"
-            src="{{ asset('img/login-office.jpeg') }}" alt="Office" />
-        <img aria-hidden="true" class="hidden object-cover w-full h-full dark:block"
-            src="{{ asset('img/login-office-dark.jpeg') }}" alt="Office" />
+        <img aria-hidden="true" class="object-cover w-full h-full" src="{{ asset('img/login-office.jpeg') }}"
+            alt="Office" />
     </div>
     <div class="flex items-center justify-center p-6 sm:p-12 md:w-1/2">
         <div class="w-full">
@@ -23,7 +21,7 @@
                     <x-inputs.password name="password" id="input-password" placeholder="***************" />
                     <x-forms.error name="password" />
                 </div>
-    
+
                 <x-buttons.submit name="{{ __('Log in') }}" />
             </form>
 
