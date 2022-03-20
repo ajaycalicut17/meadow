@@ -27,6 +27,10 @@ Database migration
 php artisan migrate
 ```
 
+## Demo
+
+<figure style="height: 500px;"><iframe src="https://phpsandbox.io/e/x/wpklk?&layout=EditorPreview&iframeId=tgmrtzcm9h&theme=dark&defaultPath=/&showExplorer=no" style="display: block" loading="lazy" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" height="100%" width="100%"></iframe></figure>
+
 ## Acknowledgements
 
  - [Laravel](https://laravel.com)
