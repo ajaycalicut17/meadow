@@ -26,3 +26,11 @@ Database migration
 ``` bash
 php artisan migrate
 ```
+
+## Acknowledgements
+
+ - [Laravel](https://laravel.com)
+ - [Laravel Fortify](https://laravel.com/docs/9.x/fortify)
+ - [Tailwind CSS](https://tailwindcss.com)
+ - [Alpine.js](https://alpinejs.dev)
+ - [Windmill Dashboard HTML](https://windmillui.com/dashboard-html)
