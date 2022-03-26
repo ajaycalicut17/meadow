@@ -1,7 +1,6 @@
 <x-layouts.guest>
     <div class="h-32 md:h-auto md:w-1/2">
-        <img aria-hidden="true" class="object-cover w-full h-full" src="{{ asset('img/login-office.jpeg') }}"
-            alt="Office" />
+        <img aria-hidden="true" class="object-cover w-full h-full" src="{{ asset('img/office.jpeg') }}" alt="Office" />
     </div>
     <div class="flex items-center justify-center p-6 sm:p-12 md:w-1/2">
         <div class="w-full">
