@@ -8,6 +8,8 @@
                 {{ __('Forgot password') }}
             </h1>
 
+            <x-layouts.alert />
+
             <form action="{{ route('password.email') }}" method="post">
                 @csrf
                 <div class="block text-sm">
