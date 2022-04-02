@@ -8,7 +8,7 @@
                 {{ __('Forgot password') }}
             </h1>
 
-            <x-layouts.alert />
+            <x-partials.alert />
 
             <form action="{{ route('password.email') }}" method="post">
                 @csrf
