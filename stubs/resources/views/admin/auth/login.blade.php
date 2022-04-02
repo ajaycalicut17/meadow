@@ -8,6 +8,8 @@
                 {{ __('Login') }}
             </h1>
 
+            <x-partials.alert />
+
             <form action="{{ route('login') }}" method="post">
                 @csrf
                 <div class="block text-sm">
