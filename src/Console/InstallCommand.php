@@ -46,13 +46,13 @@ class InstallCommand extends Command
 
         // call method from the boot method
         $search = "public function boot()" . PHP_EOL . "    {";
-        $replace = "        Fortify::loginView(function () {" . PHP_EOL . "            return view('admin.auth.login');" . PHP_EOL . "        });" .
-            PHP_EOL . "        Fortify::twoFactorChallengeView(function () {" . PHP_EOL . "            return view('admin.auth.two-factor-challenge');" . PHP_EOL . "        });" .
-            PHP_EOL . "        Fortify::registerView(function () {" . PHP_EOL . "            return view('admin.auth.register');" . PHP_EOL . "        });" .
-            PHP_EOL . "        Fortify::requestPasswordResetLinkView(function () {" . PHP_EOL . "            return view('admin.auth.forgot-password');" . PHP_EOL . "        });" .
-            PHP_EOL . "        Fortify::resetPasswordView(function (" . '$request' . ") {" . PHP_EOL . "            return view('admin.auth.reset-password', ['request' => " . '$request' . "]);" . PHP_EOL . "        });" .
-            PHP_EOL . "        Fortify::verifyEmailView(function () {" . PHP_EOL . "            return view('admin.auth.verify-email');" . PHP_EOL . "        });" .
-            PHP_EOL . "        Fortify::confirmPasswordView(function () {" . PHP_EOL . "            return view('admin.auth.confirm-password');" . PHP_EOL . "        });";
+        $replace = "        Fortify::loginView(function () {" . PHP_EOL . "            return view('auth.login');" . PHP_EOL . "        });" .
+            PHP_EOL . "        Fortify::twoFactorChallengeView(function () {" . PHP_EOL . "            return view('auth.two-factor-challenge');" . PHP_EOL . "        });" .
+            PHP_EOL . "        Fortify::registerView(function () {" . PHP_EOL . "            return view('auth.register');" . PHP_EOL . "        });" .
+            PHP_EOL . "        Fortify::requestPasswordResetLinkView(function () {" . PHP_EOL . "            return view('auth.forgot-password');" . PHP_EOL . "        });" .
+            PHP_EOL . "        Fortify::resetPasswordView(function (" . '$request' . ") {" . PHP_EOL . "            return view('auth.reset-password', ['request' => " . '$request' . "]);" . PHP_EOL . "        });" .
+            PHP_EOL . "        Fortify::verifyEmailView(function () {" . PHP_EOL . "            return view('auth.verify-email');" . PHP_EOL . "        });" .
+            PHP_EOL . "        Fortify::confirmPasswordView(function () {" . PHP_EOL . "            return view('auth.confirm-password');" . PHP_EOL . "        });";
         $this->replaceInFile($search, $replace, app_path('Providers/FortifyServiceProvider.php'));
 
         // resources files
@@ -62,8 +62,8 @@ class InstallCommand extends Command
         (new Filesystem)->copyDirectory(__DIR__ . '/../../stubs/resources/img', base_path('resources/img'));
         (new Filesystem)->ensureDirectoryExists(base_path('resources/js'));
         (new Filesystem)->copyDirectory(__DIR__ . '/../../stubs/resources/js', base_path('resources/js'));
-        (new Filesystem)->ensureDirectoryExists(base_path('resources/views/admin'));
-        (new Filesystem)->copyDirectory(__DIR__ . '/../../stubs/resources/views/admin', base_path('resources/views/admin'));
+        (new Filesystem)->ensureDirectoryExists(base_path('resources/views'));
+        (new Filesystem)->copyDirectory(__DIR__ . '/../../stubs/resources/views', base_path('resources/views'));
         (new Filesystem)->ensureDirectoryExists(base_path('resources/views/components'));
         (new Filesystem)->copyDirectory(__DIR__ . '/../../stubs/resources/views/components', base_path('resources/views/components'));
 
