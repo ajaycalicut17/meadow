@@ -32,13 +32,13 @@
 
             @if (Laravel\Fortify\Features::enabled(Laravel\Fortify\Features::resetPasswords()))
                 <p class="mt-1">
-                    <x-common.link name="{{ __('Forgot your password?') }}"
+                    <x-partials.link name="{{ __('Forgot your password?') }}"
                         href="{{ route('password.request') }}" />
                 </p>
             @endif
             @if (Laravel\Fortify\Features::enabled(Laravel\Fortify\Features::registration()))
                 <p class="mt-1">
-                    <x-common.link name="{{ __('Create account') }}" href="{{ route('register') }}" />
+                    <x-partials.link name="{{ __('Create account') }}" href="{{ route('register') }}" />
                 </p>
             @endif
         </div>
