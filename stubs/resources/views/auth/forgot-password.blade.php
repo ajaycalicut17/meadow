@@ -18,7 +18,7 @@
                     <x-forms.error name="email" />
                 </div>
 
-                <x-buttons.submit name="{{ __('Recover password') }}" />
+                <x-buttons.submit>{{ __('Recover password') }}</x-buttons.submit>
             </form>
 
             <hr class="my-8" />
