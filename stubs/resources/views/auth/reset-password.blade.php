@@ -12,18 +12,18 @@
                 @csrf
                 <input type="hidden" name="token" value="{{ request()->route('token') }}">
                 <div class="block text-sm">
-                    <x-forms.label name="{{ __('Email') }}" for="input-email" />
+                    <x-forms.label for="input-email">{{ __('Email') }}</x-forms.label>
                     <x-inputs.text name="email" id="input-email" placeholder="{{ __('Email') }}"
                         value="{{ $request->email }}" readonly />
                     <x-forms.error name="email" />
                 </div>
                 <div class="block mt-4 text-sm">
-                    <x-forms.label name="{{ __('Password') }}" for="input-password" />
+                    <x-forms.label for="input-password">{{ __('Password') }}</x-forms.label>
                     <x-inputs.password name="password" id="input-password" placeholder="***************" />
                     <x-forms.error name="password" />
                 </div>
                 <div class="block mt-4 text-sm">
-                    <x-forms.label name="{{ __('Confirm Password') }}" for="input-password-confirmation" />
+                    <x-forms.label for="input-password-confirmation">{{ __('Confirm Password') }}</x-forms.label>
                     <x-inputs.password name="password_confirmation" id="input-password-confirmation"
                         placeholder="***************" />
                     <x-forms.error name="password_confirmation" />

@@ -13,7 +13,7 @@
             <form action="{{ route('password.email') }}" method="post">
                 @csrf
                 <div class="block text-sm">
-                    <x-forms.label name="{{ __('Email') }}" for="input-email" />
+                    <x-forms.label for="input-email">{{ __('Email') }}</x-forms.label>
                     <x-inputs.text name="email" id="input-email" placeholder="{{ __('Email') }}" />
                     <x-forms.error name="email" />
                 </div>
