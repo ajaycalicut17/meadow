@@ -35,7 +35,7 @@
             <hr class="my-8" />
 
             <p class="mt-1">
-                <x-partials.link name="{{ __('Back to login') }}" href="{{ route('login') }}" />
+                <x-partials.link href="{{ route('login') }}">{{ __('Back to login') }}</x-partials.link>
             </p>
         </div>
     </div>
