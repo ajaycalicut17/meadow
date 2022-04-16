@@ -4,7 +4,7 @@
     </a>
     <ul class="mt-6">
         <li class="relative px-6 py-3">
-            <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200 @if (request()->is('home')) text-gray-800 dark:text-gray-100 @endif"
+            <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200 @if (request()->routeIs('home')) text-gray-800 dark:text-gray-100 @endif"
                 href="{{ url('home') }}">
                 <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round" stroke-linejoin="round"
                     stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
@@ -15,9 +15,9 @@
                 <span class="ml-4">{{ __('Dashboard') }}</span>
             </a>
         </li>
-        <li class="relative px-6 py-3" x-data="{ isPagesMenuOpen: @if (request()->is(['blank'])) true @else false @endif }">
+        <li class="relative px-6 py-3" x-data="{ isPagesMenuOpen: @if (request()->routeIs(['blank'])) true @else false @endif }">
             <button
-                class="inline-flex items-center justify-between w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200 @if (request()->is(['blank'])) text-gray-800 dark:text-gray-100 @endif"
+                class="inline-flex items-center justify-between w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200 @if (request()->routeIs(['blank'])) text-gray-800 dark:text-gray-100 @endif"
                 x-on:click="isPagesMenuOpen = ! isPagesMenuOpen" aria-haspopup="true">
                 <span class="inline-flex items-center">
                     <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
@@ -49,7 +49,7 @@
                     class="p-2 mt-2 space-y-2 overflow-hidden text-sm font-medium text-gray-500 rounded-md shadow-inner bg-gray-50 dark:text-gray-400 dark:bg-gray-900"
                     aria-label="submenu">
                     <li class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200">
-                        <a class="w-full @if (request()->is('blank')) text-gray-800 dark:text-gray-100 @endif"
+                        <a class="w-full @if (request()->routeIs('blank')) text-gray-800 dark:text-gray-100 @endif"
                             href="./blank.html">{{ __('Blank') }}</a>
                     </li>
                 </ul>
