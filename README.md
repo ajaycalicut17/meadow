@@ -24,7 +24,7 @@ npm install && npm run dev
 Database migration
 
 ``` bash
-php artisan migrate
+php artisan migrate --seed
 ```
 
 ## Demo
@@ -33,7 +33,7 @@ php artisan migrate
     <img src="https://phpsandbox.io/img/brand/badge.png" height="50" alt="PHPSandbox Notebook">
 </a>
 
-## Acknowledgements
+## Dependents
 
  - [Laravel](https://laravel.com)
  - [Laravel Fortify](https://laravel.com/docs/9.x/fortify)
