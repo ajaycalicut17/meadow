@@ -89,7 +89,10 @@ class InstallCommand extends Command
         copy(__DIR__ . '/../../stubs/database/seeders/UserSeeder.php', base_path('database/seeders/UserSeeder.php'));
 
         $search = "Route::get('/', function () {" . PHP_EOL . "    return view('welcome');" . PHP_EOL . "});";
-        $replace = PHP_EOL . "Route::middleware('auth')->group(function () {" . PHP_EOL . "    Route::view('/home', 'home.index');" . PHP_EOL . "});";
+        $replace = PHP_EOL . "Route::middleware('auth')->group(function () {" .
+            PHP_EOL . "    Route::view('/home', 'home.index')->name('home');" .
+            PHP_EOL . "    Route::view('/profile', 'profile.index')->name('profile');" .
+            PHP_EOL . "});";
         $this->replaceInFile($search, $replace, base_path('routes/web.php'));
     }
 
