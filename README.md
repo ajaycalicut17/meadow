@@ -1,4 +1,4 @@
-# larastarter
+# Larastarter
 Laravel starter
 
 ## Installation
