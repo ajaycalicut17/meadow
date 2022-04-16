@@ -27,6 +27,17 @@ Database migration
 php artisan migrate --seed
 ```
 
+## Default Admin Credential
+
+Email
+``` bash
+admin@gmail.com
+```
+Password
+``` bash
+12345678
+```
+
 ## Demo
 
 <a href="https://phpsandbox.io/n/wpklk">
