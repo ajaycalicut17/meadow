@@ -1,11 +1,11 @@
 <?php
 
-namespace Ajaycalicut17\Larastarter;
+namespace Ajaycalicut17\Meadow;
 
 use Illuminate\Support\ServiceProvider;
-use Ajaycalicut17\Larastarter\Console\InstallCommand;
+use Ajaycalicut17\Meadow\Console\InstallCommand;
 
-class LarastarterServiceProvider extends ServiceProvider
+class MeadowServiceProvider extends ServiceProvider
 {
     public function register()
     {

@@ -1,4 +1,4 @@
-# Larastarter
+# Meadow
 Laravel starter is a package used for instant admin panel.
 
 ## Important
@@ -9,13 +9,13 @@ This package should only be installed into new Laravel applications. Attempting 
 You can install the package via composer:
 
 ``` bash
-composer require ajaycalicut17/larastarter --dev
+composer require ajaycalicut17/meadow --dev
 ```
 
 Run artisan command for installation:
 
 ``` bash
-php artisan larastarter:install
+php artisan meadow:install
 ```
 
 Run npm

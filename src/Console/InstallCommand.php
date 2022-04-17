@@ -1,6 +1,6 @@
 <?php
 
-namespace Ajaycalicut17\Larastarter\Console;
+namespace Ajaycalicut17\Meadow\Console;
 
 use Illuminate\Console\Command;
 use Illuminate\Filesystem\Filesystem;
@@ -12,7 +12,7 @@ class InstallCommand extends Command
      *
      * @var string
      */
-    protected $signature = 'larastarter:install';
+    protected $signature = 'meadow:install';
 
     /**
      * The console command description.

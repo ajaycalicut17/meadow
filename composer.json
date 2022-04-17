@@ -1,13 +1,13 @@
 {
-    "name": "ajaycalicut17/larastarter",
-    "description": "Laravel starter",
+    "name": "ajaycalicut17/meadow",
+    "description": "Meadow is a laravel package used for instant admin panel.",
     "type": "library",
     "keywords": [
         "ajaycalicut17",
         "laravel",
-        "larastarter"
+        "meadow"
     ],
-    "homepage": "https://github.com/ajaycalicut17/larastarter",
+    "homepage": "https://github.com/ajaycalicut17/meadow",
     "license": "MIT",
     "authors": [
         {
@@ -20,13 +20,13 @@
     },
     "autoload": {
         "psr-4": {
-            "Ajaycalicut17\\Larastarter\\": "src/"
+            "Ajaycalicut17\\Meadow\\": "src/"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "Ajaycalicut17\\Larastarter\\LarastarterServiceProvider"
+                "Ajaycalicut17\\Meadow\\MeadowServiceProvider"
             ]
         }
     },
