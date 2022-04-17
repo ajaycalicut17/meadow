@@ -1,5 +1,5 @@
 # Meadow
-Laravel starter is a package used for instant admin panel.
+Meadow is a laravel package used for instant admin panel.
 
 ## Important
 This package should only be installed into new Laravel applications. Attempting to install into an existing Laravel application will result in unexpected behavior and issues.
