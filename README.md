@@ -41,10 +41,19 @@ Password
 12345678
 ```
 
+## Features
+
+ - [Authentication](https://laravel.com/docs/fortify#authentication)
+ - [Two Factor Authentication](https://laravel.com/docs/fortify#two-factor-authentication)
+ - [Registration](https://laravel.com/docs/fortify#registration)
+ - [Password Reset](https://laravel.com/docs/fortify#password-reset)
+ - [Email Verification](https://laravel.com/docs/fortify#email-verification)
+ - [Password Confirmation](https://laravel.com/docs/fortify#password-confirmation)
+
 ## Dependents
 
  - [Laravel](https://laravel.com)
- - [Laravel Fortify](https://laravel.com/docs/9.x/fortify)
+ - [Laravel Fortify](https://laravel.com/docs/fortify)
  - [Tailwind CSS](https://tailwindcss.com)
  - [Alpine.js](https://alpinejs.dev)
  - [Windmill Dashboard HTML](https://windmillui.com/dashboard-html)
