@@ -48,6 +48,25 @@ Password
  - [Registration](https://laravel.com/docs/fortify#registration)
  - [Password Reset](https://laravel.com/docs/fortify#password-reset)
  - [Email Verification](https://laravel.com/docs/fortify#email-verification)
+  
+  Enable email verification feature in config/fortify.php
+  ```code
+  Features::emailVerification(),
+  ```
+  Ensure App\Models\User class implements the Illuminate\Contracts\Auth\MustVerifyEmail interface.
+  ```code
+  use Illuminate\Contracts\Auth\MustVerifyEmail;
+
+  class User extends Authenticatable implements MustVerifyEmail
+  {
+  ```
+  To specify that a route or group of routes requires that the user has verified their email address, you should attach Laravel's built-in verified         middleware to the route.
+  ```code
+  Route::middleware(['auth', 'verified'])->group(function () {
+      // ...
+  });
+  ```
+  
  - [Password Confirmation](https://laravel.com/docs/fortify#password-confirmation)
 
 ## Dependents
