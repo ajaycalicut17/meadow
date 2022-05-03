@@ -60,15 +60,18 @@ Password
   class User extends Authenticatable implements MustVerifyEmail
   {
   ```
-  To specify that a route or group of routes requires that the user has verified their email address, you should attach Laravel's built-in verified         middleware to the route.
+  To specify that a route or group of routes requires that the user has verified their email address, you should attach verified middleware to the route.
   ```code
-  Route::middleware(['auth', 'verified'])->group(function () {
-      // ...
-  });
+  Route::view('/home', 'home.index')->name('home')->middleware('verified');
   ```
   
  - [Password Confirmation](https://laravel.com/docs/fortify#password-confirmation)
 
+  To specify that a route or group of routes requires that the user has confirmed their current password, you should attach password.confirm middleware     to the route.
+  ```code
+  Route::view('/home', 'home.index')->name('home')->middleware('password.confirm');
+  ```
+  
 ## Dependents
 
  - [Laravel](https://laravel.com)
