@@ -16,6 +16,10 @@
                     {{ __('Two factor authentication enabled successfully, please finish configuring two factor authentication below.') }}
                 @elseif (session('status') == 'two-factor-authentication-disabled')
                     {{ __('Two factor authentication disabled successfully.') }}
+                @elseif (session('status') == 'two-factor-authentication-confirmed')
+                    {{ __('Two factor authentication confirmed and enabled successfully.') }}
+                @elseif (session('status') == 'recovery-codes-generated')
+                    {{ __('Two factor authentication recovery codes regenerated successfully.') }}
                 @endif
             </div>
         @endif
@@ -93,19 +97,53 @@
                     {{ __('Two Factor Authentication') }}
                 </h4>
                 <div class="px-4 py-3 mb-8 bg-white rounded-lg shadow-md dark:bg-gray-800">
-                    <div class="block text-md text-gray-700 dark:text-gray-400">
-                        {{ __('When two factor authentication is enabled, you will be prompted for a secure, random token during authentication. You may retrieve this token from your phone\'s Google Authenticator application.') }}
-                    </div>
                     @if (auth()->user()->two_factor_secret)
-                        <div class="mt-2">
-                            {!! request()->user()->twoFactorQrCodeSvg() !!}
-                        </div>
+                        @if (auth()->user()->two_factor_recovery_codes && auth()->user()->two_factor_confirmed_at)
+                            <div class="block text-md text-gray-700 dark:text-gray-400">
+                                {{ __('Store these recovery codes in a secure password manager. They can be used to recover access to your account if your two factor authentication device is lost.') }}
+                            </div>
+                            <div
+                                class="grid gap-1 max-w-xl mt-4 px-4 py-4 text-md text-gray-700 bg-gray-100 dark:text-gray-300 dark:bg-gray-700 rounded-lg">
+                                @foreach (request()->user()->recoveryCodes()
+    as $code)
+                                    <div>{{ $code }}</div>
+                                @endforeach
+                            </div>
+                            <form action="{{ route('two-factor.recovery-codes') }}" method="post">
+                                @csrf
+                                <x-buttons.submit>{{ __('Regenerate Recovery Codes') }}</x-buttons.submit>
+                            </form>
+                        @else
+                            <div class="block text-md text-gray-700 dark:text-gray-400">
+                                {{ __("To finish enabling two factor authentication, scan the following QR code using your phone's authenticator application or enter the setup key and provide the generated OTP code.") }}
+                            </div>
+                            <div class="mt-4">
+                                {!! request()->user()->twoFactorQrCodeSvg() !!}
+                            </div>
+                            <div class="block mt-4 text-md text-gray-700 dark:text-gray-400">
+                                {{ __('Setup Key') }}: {{ decrypt(auth()->user()->two_factor_secret) }}
+                            </div>
+                            <form action="{{ route('two-factor.confirm') }}" method="post">
+                                @csrf
+                                <div class="block mt-4 text-sm">
+                                    <x-forms.label for="input-code">{{ __('Code') }}</x-forms.label>
+                                    <x-inputs.text name="code" id="input-code" placeholder="{{ __('Code') }}" />
+                                    @error('code', 'confirmTwoFactorAuthentication')
+                                        <span class="text-xs text-red-600 dark:text-red-400">{{ $message }}</span>
+                                    @enderror
+                                </div>
+                                <x-buttons.submit>{{ __('Confirm') }}</x-buttons.submit>
+                            </form>
+                        @endif
                         <form action="{{ route('two-factor.disable') }}" method="post">
                             @csrf
                             @method('DELETE')
                             <x-buttons.submit>{{ __('Disable') }}</x-buttons.submit>
                         </form>
                     @else
+                        <div class="block text-md text-gray-700 dark:text-gray-400">
+                            {{ __('When two factor authentication is enabled, you will be prompted for a secure, random token during authentication. You may retrieve this token from your phone\'s Google Authenticator application.') }}
+                        </div>
                         <form action="{{ route('two-factor.enable') }}" method="post">
                             @csrf
                             <x-buttons.submit>{{ __('Enable') }}</x-buttons.submit>
