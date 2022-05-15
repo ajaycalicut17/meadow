@@ -16,7 +16,7 @@
                     <x-forms.error name="password" />
                 </div>
 
-                <x-buttons.submit>{{ __('Confirm') }}</x-buttons.submit>
+                <x-buttons.submit class="w-full bg-purple-600 active:bg-purple-600 hover:bg-purple-700 focus:shadow-outline-purple">{{ __('Confirm') }}</x-buttons.submit>
             </form>
         </div>
     </div>

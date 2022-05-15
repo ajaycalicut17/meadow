@@ -18,7 +18,7 @@
                     <x-forms.error name="email" />
                 </div>
 
-                <x-buttons.submit>{{ __('Recover password') }}</x-buttons.submit>
+                <x-buttons.submit class="w-full bg-purple-600 active:bg-purple-600 hover:bg-purple-700 focus:shadow-outline-purple">{{ __('Recover password') }}</x-buttons.submit>
             </form>
 
             <hr class="my-8" />

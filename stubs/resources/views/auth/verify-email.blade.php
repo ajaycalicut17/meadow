@@ -23,12 +23,12 @@
 
             <form action="{{ route('verification.send') }}" method="post">
                 @csrf
-                <x-buttons.submit>{{ __('Resend Verification Email') }}</x-buttons.submit>
+                <x-buttons.submit class="w-full bg-purple-600 active:bg-purple-600 hover:bg-purple-700 focus:shadow-outline-purple">{{ __('Resend Verification Email') }}</x-buttons.submit>
             </form>
 
             <form action="{{ route('logout') }}" method="post">
                 @csrf
-                <x-buttons.submit>{{ __('Log Out') }}</x-buttons.submit>
+                <x-buttons.submit class="w-full bg-purple-600 active:bg-purple-600 hover:bg-purple-700 focus:shadow-outline-purple">{{ __('Log Out') }}</x-buttons.submit>
             </form>
         </div>
     </div>

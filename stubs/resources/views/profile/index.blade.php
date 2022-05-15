@@ -49,7 +49,7 @@
                             @enderror
                         </div>
 
-                        <x-buttons.submit>{{ __('Update') }}</x-buttons.submit>
+                        <x-buttons.submit class="w-full bg-purple-600 active:bg-purple-600 hover:bg-purple-700 focus:shadow-outline-purple">{{ __('Update') }}</x-buttons.submit>
                     </form>
                 </div>
             @endif
@@ -87,7 +87,7 @@
                             @enderror
                         </div>
 
-                        <x-buttons.submit>{{ __('Update') }}</x-buttons.submit>
+                        <x-buttons.submit class="w-full bg-purple-600 active:bg-purple-600 hover:bg-purple-700 focus:shadow-outline-purple">{{ __('Update') }}</x-buttons.submit>
                     </form>
                 </div>
             @endif
@@ -111,7 +111,7 @@
                             </div>
                             <form action="{{ route('two-factor.recovery-codes') }}" method="post">
                                 @csrf
-                                <x-buttons.submit>{{ __('Regenerate Recovery Codes') }}</x-buttons.submit>
+                                <x-buttons.submit class="w-full bg-purple-600 active:bg-purple-600 hover:bg-purple-700 focus:shadow-outline-purple">{{ __('Regenerate Recovery Codes') }}</x-buttons.submit>
                             </form>
                         @else
                             <div class="block text-md text-gray-700 dark:text-gray-400">
@@ -132,13 +132,13 @@
                                         <span class="text-xs text-red-600 dark:text-red-400">{{ $message }}</span>
                                     @enderror
                                 </div>
-                                <x-buttons.submit>{{ __('Confirm') }}</x-buttons.submit>
+                                <x-buttons.submit class="w-full bg-purple-600 active:bg-purple-600 hover:bg-purple-700 focus:shadow-outline-purple">{{ __('Confirm') }}</x-buttons.submit>
                             </form>
                         @endif
                         <form action="{{ route('two-factor.disable') }}" method="post">
                             @csrf
                             @method('DELETE')
-                            <x-buttons.submit>{{ __('Disable') }}</x-buttons.submit>
+                            <x-buttons.submit class="w-full bg-purple-600 active:bg-purple-600 hover:bg-purple-700 focus:shadow-outline-purple">{{ __('Disable') }}</x-buttons.submit>
                         </form>
                     @else
                         <div class="block text-md text-gray-700 dark:text-gray-400">
@@ -146,7 +146,7 @@
                         </div>
                         <form action="{{ route('two-factor.enable') }}" method="post">
                             @csrf
-                            <x-buttons.submit>{{ __('Enable') }}</x-buttons.submit>
+                            <x-buttons.submit class="w-full bg-purple-600 active:bg-purple-600 hover:bg-purple-700 focus:shadow-outline-purple">{{ __('Enable') }}</x-buttons.submit>
                         </form>
                     @endif
                 </div>

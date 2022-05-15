@@ -23,7 +23,7 @@
                     <x-forms.error name="password" />
                 </div>
 
-                <x-buttons.submit>{{ __('Log in') }}</x-buttons.submit>
+                <x-buttons.submit class="w-full bg-purple-600 active:bg-purple-600 hover:bg-purple-700 focus:shadow-outline-purple">{{ __('Log in') }}</x-buttons.submit>
             </form>
 
             @if (Laravel\Fortify\Features::enabled(Laravel\Fortify\Features::resetPasswords()) || Laravel\Fortify\Features::enabled(Laravel\Fortify\Features::registration()))

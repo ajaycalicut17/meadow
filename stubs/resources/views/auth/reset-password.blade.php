@@ -29,7 +29,7 @@
                     <x-forms.error name="password_confirmation" />
                 </div>
 
-                <x-buttons.submit>{{ __('Reset') }}</x-buttons.submit>
+                <x-buttons.submit class="w-full bg-purple-600 active:bg-purple-600 hover:bg-purple-700 focus:shadow-outline-purple">{{ __('Reset') }}</x-buttons.submit>
             </form>
 
             <hr class="my-8" />
