@@ -138,7 +138,7 @@
                         <form action="{{ route('two-factor.disable') }}" method="post">
                             @csrf
                             @method('DELETE')
-                            <x-buttons.submit class="w-full bg-purple-600 active:bg-purple-600 hover:bg-purple-700 focus:shadow-outline-purple">{{ __('Disable') }}</x-buttons.submit>
+                            <x-buttons.submit class="w-full bg-red-600 active:bg-red-600 hover:bg-red-700 focus:shadow-outline-red">{{ __('Disable') }}</x-buttons.submit>
                         </form>
                     @else
                         <div class="block text-md text-gray-700 dark:text-gray-400">
