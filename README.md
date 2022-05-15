@@ -45,6 +45,23 @@ Password
 
  - [Authentication](https://laravel.com/docs/fortify#authentication)
  - [Two Factor Authentication](https://laravel.com/docs/fortify#two-factor-authentication)
+
+  Enable two factor authentication feature in config/fortify.php
+  ```code
+  Features::twoFactorAuthentication([
+   'confirm' => true,
+   'confirmPassword' => true,
+  ]),
+  ```
+  Ensure App\Models\User model uses the Laravel\Fortify\TwoFactorAuthenticatable trait.
+  ```code
+  use Laravel\Fortify\TwoFactorAuthenticatable;
+
+  class User extends Authenticatable
+  {
+    use TwoFactorAuthenticatable;
+  ```
+  
  - [Registration](https://laravel.com/docs/fortify#registration)
  - [Password Reset](https://laravel.com/docs/fortify#password-reset)
  - [Email Verification](https://laravel.com/docs/fortify#email-verification)
