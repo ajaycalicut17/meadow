@@ -1,4 +1,8 @@
 # Meadow
+[![Packagist Downloads](https://img.shields.io/packagist/dt/ajaycalicut17/meadow)](https://packagist.org/packages/ajaycalicut17/meadow)
+[![Packagist Version](https://img.shields.io/packagist/v/ajaycalicut17/meadow)](https://packagist.org/packages/ajaycalicut17/meadow)
+[![Packagist License](https://img.shields.io/packagist/l/ajaycalicut17/meadow)](https://packagist.org/packages/ajaycalicut17/meadow)
+
 Meadow is a laravel package used for instant admin panel.
 
 ## Important
