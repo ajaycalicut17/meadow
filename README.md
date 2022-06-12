@@ -31,18 +31,12 @@ npm install && npm run dev
 Database migration
 
 ``` bash
-php artisan migrate --seed
+php artisan migrate
 ```
 
-## Default Admin Credential
-
-Email
+Create a new user account using:
 ``` bash
-admin@gmail.com
-```
-Password
-``` bash
-12345678
+php artisan make:meadow-user
 ```
 
 ## Features
