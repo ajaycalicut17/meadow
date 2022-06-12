@@ -4,6 +4,7 @@ namespace Ajaycalicut17\Meadow;
 
 use Illuminate\Support\ServiceProvider;
 use Ajaycalicut17\Meadow\Console\InstallCommand;
+use Ajaycalicut17\Meadow\Console\MakeUserCommand;
 
 class MeadowServiceProvider extends ServiceProvider
 {
@@ -16,7 +17,8 @@ class MeadowServiceProvider extends ServiceProvider
     {
         if ($this->app->runningInConsole()) {
             $this->commands([
-                InstallCommand::class
+                InstallCommand::class,
+                MakeUserCommand::class
             ]);
         }
     }
