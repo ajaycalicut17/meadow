@@ -16,7 +16,8 @@
         }
     ],
     "require": {
-        "laravel/fortify": "^1.10"
+        "laravel/fortify": "^1.10",
+        "livewire/livewire": "^2.10"
     },
     "autoload": {
         "psr-4": {

@@ -64,8 +64,6 @@ class InstallCommand extends Command
         (new Filesystem)->copyDirectory(__DIR__ . '/../../stubs/resources/js', base_path('resources/js'));
         (new Filesystem)->ensureDirectoryExists(base_path('resources/views'));
         (new Filesystem)->copyDirectory(__DIR__ . '/../../stubs/resources/views', base_path('resources/views'));
-        (new Filesystem)->ensureDirectoryExists(base_path('resources/views/components'));
-        (new Filesystem)->copyDirectory(__DIR__ . '/../../stubs/resources/views/components', base_path('resources/views/components'));
 
         // npm packages
         $this->updateNodePackages(function ($packages) {
@@ -88,6 +86,10 @@ class InstallCommand extends Command
             PHP_EOL . "    Route::view('/profile', 'profile.index')->name('profile');" .
             PHP_EOL . "});";
         $this->replaceInFile($search, $replace, base_path('routes/web.php'));
+
+        // app files
+        (new Filesystem)->ensureDirectoryExists(base_path('app/Http/Livewire'));
+        (new Filesystem)->copyDirectory(__DIR__ . '/../../stubs/app/Http/Livewire', base_path('app/Http/Livewire'));
     }
 
     protected function replaceInFile(string $search = '', string $replace = '', string $path = ''): void
